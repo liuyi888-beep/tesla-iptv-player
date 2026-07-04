@@ -1,0 +1,15 @@
+services:
+  tesla-iptv-player:
+    image: tesla-iptv-player:local
+    container_name: tesla-iptv-player
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 5188
+      TZ: Asia/Shanghai
+    ports:
+      - "5188:5188"
+    volumes:
+      - ./index.m3u:/app/index.m3u:ro
+    stop_grace_period: 10s

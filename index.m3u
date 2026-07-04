@@ -1,0 +1,4 @@
+#EXTM3U
+#EXTINF:-1 tvg-name="Tears of Steel Demo",Tears of Steel Demo
+#EXTVLCOPT:tesla-direct=1
+https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8
