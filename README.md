@@ -229,6 +229,22 @@ rtsp://192.168.10.12:8554/live
 - 用 Nginx/Caddy 反向代理并加访问控制。
 - 在服务器防火墙里限制访问 IP。
 
+如果用 Nginx反向代理并加访问控制，建议 Nginx 反代加上：
+```nginx
+proxy_http_version 1.1;
+proxy_set_header Host $host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+proxy_set_header Connection "";
+
+proxy_buffering off;
+proxy_request_buffering off;
+proxy_cache off;
+proxy_read_timeout 3600s;
+proxy_send_timeout 3600s;
+```
+
 不要把内网敏感直播源、摄像头源或带鉴权信息的 URL 直接公开发布。
 
 ## 更新镜像
