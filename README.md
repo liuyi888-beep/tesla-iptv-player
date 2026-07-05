@@ -40,12 +40,12 @@ docker compose version
 
 如果系统只支持旧版 `docker-compose` 命令，也可以把下文中的 `docker compose` 替换为 `docker-compose`。
 
-## 快速启动
+## 快速部署
 
 进入本目录：
 
 ```bash
-cd 发行版
+cd tesla-iptv-player
 ```
 
 导入镜像：
