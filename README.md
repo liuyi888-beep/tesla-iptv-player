@@ -149,23 +149,11 @@ http://192.168.10.12:5140/CCTV-1HD
 
 频道列表会显示“转码”。如果同一个 HTTP 频道同时配置 `tesla-direct=1` 和 `tesla-low=720`，会以转码优先，自动走服务器代理。
 
-## 按频道软解
+## 默认使用硬解模式
 
-播放器默认使用硬解模式。某个频道如果硬解不兼容，可以在频道 URL 前加：
-
-```m3u
-#EXTVLCOPT:tesla-decode=software
-```
-
-完整示例：
-
-```m3u
-#EXTINF:-1 tvg-name="Software-Test",Software-Test
-#EXTVLCOPT:tesla-decode=software
-http://192.168.10.12:5140/CCTV-1
-```
-
-这个频道会改用软解，频道列表会显示“软解”。当前版本不做自动回退，是否软解由播放列表控制。
+需要浏览器支持，常见浏览器需要使用HTTPS访问。
+如果硬解浏览器不兼容，会自动尝试降级播放。
+加载节目源时会显示：正在加载XX频道（兼容模式）
 
 ## 常用命令
 

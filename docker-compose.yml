@@ -2,12 +2,13 @@ services:
   tesla-iptv-player:
     image: tesla-iptv-player:local
     container_name: tesla-iptv-player
+    pull_policy: never
+    init: true
     restart: unless-stopped
     environment:
       NODE_ENV: production
-      HOST: 0.0.0.0
-      PORT: 5188
-      TZ: Asia/Shanghai
+      HOST: "0.0.0.0"
+      PORT: "5188"
     ports:
       - "5188:5188"
     volumes:
